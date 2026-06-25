@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩网 · 简明指南与访问提示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f4f4f7;
+            color: #2c2c2e;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* hero 横幅 */
+        .hero {
+            background: linear-gradient(145deg, #e9e9ef 0%, #fafafe 100%);
+            border-radius: 28px;
+            padding: 3rem 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #d0d0db 0%, transparent 70%);
+            top: 20px;
+            right: 30px;
+            opacity: 0.3;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1f1f24;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subhead {
+            font-size: 1.1rem;
+            color: #5a5a62;
+            border-left: 3px solid #b8b8c6;
+            padding-left: 1rem;
+            margin-top: 0.4rem;
+            max-width: 650px;
+        }
+
+        /* 卡片 */
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e1e1e8;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            flex: 1 1 280px;
+            box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: #2b2b30;
+            border-bottom: 1px solid #ececf0;
+            padding-bottom: 0.4rem;
+        }
+
+        .card h2 span {
+            background: #e2e2ea;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 0.6rem;
+            vertical-align: middle;
+        }
+
+        .card p {
+            margin: 0.6rem 0;
+            color: #3f3f45;
+            font-size: 0.95rem;
+        }
+
+        .card .small-note {
+            font-size: 0.875rem;
+            color: #7b7b85;
+            margin-top: 1rem;
+            border-top: 1px dashed #dcdce2;
+            padding-top: 0.75rem;
+        }
+
+        /* 场景与提示双栏 */
+        .split-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .split-card {
+            flex: 1 1 260px;
+            background: #fcfcfd;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e6e6ed;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .split-card h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #26262c;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .split-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0;
+        }
+
+        .split-card ul li {
+            padding: 0.35rem 0;
+            padding-left: 1.1rem;
+            position: relative;
+            color: #3f3f47;
+            font-size: 0.95rem;
+        }
+
+        .split-card ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0.1rem;
+            color: #9b9baa;
+            font-weight: bold;
+        }
+
+        .split-card .reminder {
+            background: #eaeaf0;
+            padding: 0.8rem 1rem;
+            border-radius: 14px;
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            color: #2d2d34;
+            border-left: 3px solid #b2b2c0;
+        }
+
+        /* FAQ摘要 */
+        .faq-summary {
+            background: #ffffff;
+            border: 1px solid #e2e2ea;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.03);
+        }
+
+        .faq-summary h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #222228;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .faq-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #efeff3;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 450;
+            min-width: 80px;
+            color: #565662;
+            font-size: 0.9rem;
+        }
+
+        .faq-a {
+            color: #33333b;
+            font-size: 0.9rem;
+        }
+
+        /* 页尾 + 链接 */
+        .page-footer {
+            margin-top: 3.5rem;
+            padding: 1.5rem 0 0.5rem;
+            border-top: 1px solid #d7d7e0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .page-footer p {
+            color: #5b5b65;
+            font-size: 0.95rem;
+        }
+
+        .page-footer a {
+            color: #3a3a44;
+            text-decoration: none;
+            font-weight: 475;
+            border-bottom: 1px solid #b8b8c8;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .page-footer a:hover {
+            color: #1c1c22;
+            border-bottom-color: #4a4a58;
+        }
+
+        .small-meta {
+            font-size: 0.8rem;
+            color: #8e8e9a;
+        }
+
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+            .card, .split-card, .faq-summary {
+                padding: 1.4rem 1.2rem;
+            }
+            .page-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 首页横幅 hero -->
+    <div class="hero">
+        <h1>竞彩网 · 简明指南</h1>
+        <div class="subhead">从了解基础规则到从容浏览，一份温和的访问提示与使用思路。</div>
+    </div>
+
+    <!-- 背景说明 + 三段介绍 (卡片形式) -->
+    <div class="card-grid">
+        <div class="card">
+            <h2><span></span> 平台背景</h2>
+            <p>「竞彩」的概念源于对体育赛事结果的竞猜，逐渐演变为一种兼具娱乐与观察的方式。<a href="https://zhs-sportbet.com" style="text-decoration: underline; color: #3b3b44;">竞彩网</a> 为中文用户提供了一个集中的信息与访问渠道，帮助人们快速了解相关动态与内容。</p>
+            <p class="small-note">不夸大任何收益，仅作为信息参考渠道。</p>
+        </div>
+        <div class="card">
+            <h2><span></span> 界面与节奏</h2>
+            <p>网站结构以清晰的信息层级为主，避免过度复杂的操作路径。无论是提前浏览赛事列表，还是查阅常见说明，都可以按自己的节奏进行。保持适度关注，比匆忙决策更有意义。</p>
+        </div>
+        <div class="card">
+            <h2><span></span> 访问心态</h2>
+            <p>每一次浏览都可以是了解体育和概率的微小窗口。建议先花时间阅读页面上的说明与规则，不急于操作。保持理性的期待，把它当作一种休闲信息源，而非捷径。</p>
+        </div>
+    </div>
+
+    <!-- 特点 + 场景 (双栏) -->
+    <div class="split-section">
+        <div class="split-card">
+            <h3>✦ 常见特点</h3>
+            <ul>
+                <li>提供多种体育项目的竞猜选项</li>
+                <li>页面通常附有实时数据与历史统计</li>
+                <li>支持多语言及中文界面切换</li>
+                <li>账户管理及账单记录清晰</li>
+            </ul>
+            <div class="reminder">特点仅作客观列举，实际体验因个人习惯而异。</div>
+        </div>
+        <div class="split-card">
+            <h3>✦ 使用场景</h3>
+            <ul>
+                <li>赛前浏览对阵与近期状态</li>
+                <li>查看常见玩法说明与例子</li>
+                <li>熟悉界面后尝试小额休闲参与</li>
+                <li>与朋友讨论赛事时作为数据参考</li>
+            </ul>
+            <div class="reminder">任何场景下，保持放松与理性都是最好的陪伴。</div>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 (非固定章节，轻量) -->
+    <div class="faq-summary">
+        <h3>📌 访问提醒 · 常见摘要</h3>
+        <div class="faq-item">
+            <span class="faq-q">关于注册</span>
+            <span class="faq-a">通常需要提供基础信息并完成验证。具体流程以网站指引为准。</span>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">资金安全</span>
+            <span class="faq-a">建议使用独立支付方式，并留意每次操作后的记录核对。</span>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">时间管理</span>
+            <span class="faq-a">为自己设定一个轻松的浏览时间，避免过度投入。</span>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">规则理解</span>
+            <span class="faq-a">不同赛事与玩法有不同条例，花几分钟阅读 FAQ 能减少误解。</span>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示 + 自然链接 -->
+    <div class="page-footer">
+        <p>如需进一步了解，可前往 <a href="https://zhs-sportbet.com">竞彩网</a> 浏览官方信息与最新动态。</p>
+        <p class="small-meta">本页仅为介绍性内容，不构成任何建议 · 请理性访问</p>
+    </div>
+
+</div>
+</body>
+</html>
